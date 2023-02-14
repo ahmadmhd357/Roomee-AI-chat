@@ -17,9 +17,9 @@ export default async function RootLayout({ children }) {
         <SessionProvider session={session?.value}>
           {session ? (
             <div className="flex">
-              <div className="bg-gray-900 max-w-xs h-screen overflow-y-auto md:min-w-[20rem]">
+              
                 <Sidebar />
-              </div>
+              
               <ClientProvider />
               <div className=" bg-gray-700 flex-1">{children}</div>
             </div>
