@@ -8,6 +8,7 @@ import ClientProvider from "@/components/ClientProvider";
 export default async function RootLayout({ children }) {
   const cookiesList = cookies();
   const session = cookiesList.get("next-auth.session-token");
+   console.log(session);
   return (
     <html lang="en">
       <head />
