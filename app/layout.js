@@ -1,19 +1,19 @@
 import SessionProvider from "@/components/SessionProvider";
-import { cookies } from "next/headers";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import WelcomePage from "@/components/WelcomePage";
 import Sidebar from "../components/Sidebar";
 import "./globals.css";
 import ClientProvider from "@/components/ClientProvider";
 
 export default async function RootLayout({ children }) {
-  const cookiesList = cookies();
-  const session = cookiesList.get("next-auth.session-token");
-   console.log(session);
+  const session = await getServerSession(authOptions);
+
   return (
     <html lang="en">
       <head />
       <body>
-        <SessionProvider session={session?.value}>
+        <SessionProvider session={session}>
           {session ? (
             <div className="flex">
               <Sidebar />
