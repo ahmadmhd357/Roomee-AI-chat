@@ -1,9 +1,7 @@
 "use client";
 import { signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
 
 function LogOut() {
-  const router = useRouter();
   const { data: session } = useSession();
   if (session)
     return (
