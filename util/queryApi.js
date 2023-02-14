@@ -3,7 +3,7 @@ import openAi from "./chatgpt";
 const query = async (message) => {
   const res = await openAi
     .createCompletion({
-      model: "text-davinci-003",
+      model: "text-curie-001",
       prompt: message,
       temperature: 0.7,
       max_tokens: 200,
